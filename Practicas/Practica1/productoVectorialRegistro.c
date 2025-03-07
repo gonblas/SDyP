@@ -53,13 +53,13 @@ void verificarResultado(Tvector* A, unsigned long N){
 }
 
 int main(int argc, char* argv[]){
-double time_init, time_end;
+	double time_init, time_end;
 
 	if(argc<2){
 		printf("Falta un parámetro de la dimensión de los arreglos.\n");
 		printf("Ejecutar ./programa N\n");
 		return -1;
-	}	
+	}
 
 	unsigned long N = atol(argv[1]);
 	Tvector* U;

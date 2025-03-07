@@ -3,21 +3,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/time.h>
-
-/**********Para calcular tiempo*************************************/
-double dwalltime()
-{
-        double sec;
-        struct timeval tv;
-
-        gettimeofday(&tv,NULL);
-        sec = tv.tv_sec + tv.tv_usec/1000000.0;
-        return sec;
-}
-/****************************************************************/
+#include "../../utils/utils.h"
 
 void inicializarArrays(double* Ui, double* Uj, double* Uk, double* Vi, double* Vj, double* Vk, unsigned long N){
- unsigned long p;
+	unsigned long p;
 
 	for(p=0; p<N; p++){
 		Ui[p] = 2.0;
@@ -32,8 +21,8 @@ void inicializarArrays(double* Ui, double* Uj, double* Uk, double* Vi, double* V
 } 
 
 void productoVectorialArrays(double* Ui, double* Uj, double* Uk, double* Vi, double* Vj, double* Vk, double* Wi, double* Wj, double* Wk, unsigned long N){
- unsigned long p;
- 
+	unsigned long p;
+	
 	for(p=0; p<N; p++){
 		Wi[p] = Uj[p] * Vk[p] - Uk[p] * Vj[p];
 		Wj[p] = Uk[p] * Vi[p] - Ui[p] * Vk[p];
@@ -43,9 +32,9 @@ void productoVectorialArrays(double* Ui, double* Uj, double* Uk, double* Vi, dou
 } 
 
 void verificarResultado(double* Ai, double* Aj, double* Ak, unsigned long N){
- unsigned long p;
- unsigned long errores = 0;
- 
+	unsigned long p;
+	unsigned long errores = 0;
+
 	for(p=0; p<N; p++){
 		if( (Ai[p] != 1.0) || (Aj[p] != -5.0) || (Ak[p] != -2.0) ){
 			printf("Error en la posición %lu.\n",p);
@@ -67,17 +56,18 @@ double time_init, time_end;
 		printf("Ejecutar ./programa N\n");
 		return -1;
 	}	
- unsigned long N = atol(argv[1]);
 
- double* Ui;
- double* Vi;
- double* Wi;
- double* Uj;
- double* Vj;
- double* Wj;
- double* Uk;
- double* Vk;
- double* Wk;
+	unsigned long N = atol(argv[1]);
+
+	double* Ui;
+	double* Vi;
+	double* Wi;
+	double* Uj;
+	double* Vj;
+	double* Wj;
+	double* Uk;
+	double* Vk;
+	double* Wk;
 
 	Ui=(double*)malloc(sizeof(double)*N); 
 	Vi=(double*)malloc(sizeof(double)*N);
@@ -90,7 +80,7 @@ double time_init, time_end;
 	Uk=(double*)malloc(sizeof(double)*N); 
 	Vk=(double*)malloc(sizeof(double)*N);
 	Wk=(double*)malloc(sizeof(double)*N);
-		
+	
 	inicializarArrays(Ui,Uj,Uk,Vi,Vj,Vk,N);
 
 	time_init = dwalltime();	
@@ -112,6 +102,5 @@ double time_init, time_end;
 	free(Uk);
 	free(Vk);
 	free(Wk);
- 
 	return 0;
 }

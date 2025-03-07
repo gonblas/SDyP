@@ -40,7 +40,15 @@ Esto se debe a que, al estar ambas matrices ordenadas de forma tal que los sigui
 | 40         | 0.0000000954  | 0.3819421053  |
 | 50         | 0.0000000954  | 54.1052495956  |
 
-**3.** Analizar los algoritmos productoVectorialRegistro.c y productoVectorialSinRegistro.c. Ambos programas parten de dos conjuntos de N vectores matemáticos y realizan el producto vectorial uno a uno de acuerdo al orden de cada vector en el conjunto. ¿Cuál de las dos soluciones es más rápida? ¿Por qué?:
+**3.** La opción con registro tarda menos, eso se debe a que los vectores que son parte de la operación tienen todos los datos agrupados, por lo que se trae a caché datos que pueden ser utilizados. No así en el caso de sin registro, aunque por resultado del azar tambien puede suceder.
+
+| N |  Con Reg. [seg] | Sin Reg. [seg] |
+| :--------: | :----: | :----: |
+| 2048          | 0.0000338554  | 0.0000629425  |
+| 4096          | 0.0000610352  | 0.0001530647   |
+| 8192         | 0.0001080036  | 0.0001268387  |
+
+Analizar los algoritmos productoVectorialRegistro.c y productoVectorialSinRegistro.c. Ambos programas parten de dos conjuntos de N vectores matemáticos y realizan el producto vectorial uno a uno de acuerdo al orden de cada vector en el conjunto. ¿Cuál de las dos soluciones es más rápida? ¿Por qué?:
 
 Ejecución: ./ productoVectorialRegistro N
 ./ productoVectorialSinRegistro N
