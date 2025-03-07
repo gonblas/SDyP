@@ -2,18 +2,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 #include<sys/time.h>
-
-/**********Para calcular tiempo*************************************/
-double dwalltime()
-{
-        double sec;
-        struct timeval tv;
-
-        gettimeofday(&tv,NULL);
-        sec = tv.tv_sec + tv.tv_usec/1000000.0;
-        return sec;
-}
-/****************************************************************/
+#include "../../utils/utils.h"
 
 typedef struct rvector {
   double i;
@@ -22,8 +11,8 @@ typedef struct rvector {
 } Tvector;
 
 void inicializarArrays(Tvector* U, Tvector* V, unsigned long N){
- unsigned long p;
- 
+	unsigned long p;
+
 	for(p=0; p<N; p++){
 		U[p].i = 2.0;
 		U[p].j = 0.0;
@@ -36,21 +25,20 @@ void inicializarArrays(Tvector* U, Tvector* V, unsigned long N){
 } 
 
 Tvector* productoVectorialArray(Tvector* U, Tvector* V, Tvector* W, unsigned long N){
- unsigned long p;
- 
+	unsigned long p;
 	for(p=0; p<N; p++){
 		W[p].i = U[p].j * V[p].k - U[p].k * V[p].j;
 		W[p].j = U[p].k * V[p].i - U[p].i * V[p].k;
 		W[p].k = U[p].i * V[p].j - U[p].j * V[p].i;
 	}
 
- return W;
+	return W;
 } 
 
 void verificarResultado(Tvector* A, unsigned long N){
- unsigned long p;
- unsigned long errores = 0;
- 
+	unsigned long p;
+	unsigned long errores = 0;
+
 	for(p=0; p<N; p++){
 		if( (A[p].i != 1.0) || (A[p].j != -5.0) || (A[p].k != -2.0) ){
 			printf("Error en la posición %lu.\n",p);
@@ -73,11 +61,11 @@ double time_init, time_end;
 		return -1;
 	}	
 
- unsigned long N = atol(argv[1]);
- Tvector* U;
- Tvector* V;
- Tvector* W;
- 
+	unsigned long N = atol(argv[1]);
+	Tvector* U;
+	Tvector* V;
+	Tvector* W;
+
 	U=(Tvector*)malloc(sizeof(Tvector)*N); 
 	V=(Tvector*)malloc(sizeof(Tvector)*N);
 	W=(Tvector*)malloc(sizeof(Tvector)*N);

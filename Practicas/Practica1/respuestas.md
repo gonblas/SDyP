@@ -16,7 +16,7 @@
 
 **d.** El algoritmo multBloques.c realiza la multiplicación de matrices por bloques más pequeños de la siguiente forma: Toma submatrices cuadradas de $\mathrm{BS} \cdot \mathrm{BS}$ de las matrices originales, y realiza la multiplicación con estas submatrices. El algoritmo optimizado de el ejercicio 1a tarda 2.229850 seg para el con N = 1024, mientras que el algoritmo multBloques tarda:
 
-| BS |  Tiempo  |
+| BS |  Tiempo [seg] |
 | :--------: | :----: |
 | 16          | 2.422246  |
 | 64          | 2.385468  |
@@ -30,7 +30,15 @@ Esto se debe a que, al estar ambas matrices ordenadas de forma tal que los sigui
 **e.** La alternativa sin ceros es más rápida puesto que no almacena en caché los ceros innecesarios.
 
 
-**2.** 
+**2.** Al ser el algoritmo iterativo un algoritmo de orden $N$ y el recursivo de orden $2^N$ es lógico que al aumentar el valor de N, la diferencia aumente. Además de todas las llamadas recursivas.
+
+| N |  Tiempo Iter [seg] | Tiempo Rec [seg] |
+| :--------: | :----: | :----: |
+| 10          | 0.0000000000  | 0.0000001907  |
+| 20          | 0.0000000000  | 0.0000272036   |
+| 30         | 0.0000000954  | 0.0040948153  |
+| 40         | 0.0000000954  | 0.3819421053  |
+| 50         | 0.0000000954  | 54.1052495956  |
 
 **3.** Analizar los algoritmos productoVectorialRegistro.c y productoVectorialSinRegistro.c. Ambos programas parten de dos conjuntos de N vectores matemáticos y realizan el producto vectorial uno a uno de acuerdo al orden de cada vector en el conjunto. ¿Cuál de las dos soluciones es más rápida? ¿Por qué?:
 
