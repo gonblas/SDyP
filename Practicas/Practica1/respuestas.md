@@ -76,7 +76,7 @@ Puesto que las operaciones de multiplicación y division de números de potencia
 | :--------: | :----: | :----: |:----: |
 | 2048          | 100000 | 0.0001300927     |  0.0001057065   |
 | 4096          | 100000 | 0.0001041755  | 0.0001199758   |
-| 8092          | 100000 | 0.0000958917  | 0.0001435796   |
+| 8192          | 100000 | 0.0000958917  | 0.0001435796   |
 
 Se puede observar que la operación de producto es menos eficiente, esto se debe a que el producto por un número flotante es más costoso que la división por un número entero. ?????
 
@@ -86,28 +86,29 @@ Se puede observar que la operación de producto es menos eficiente, esto se debe
 | :--------: | :----: | :----: |:----: |
 | 2048          | 128 | 0.000015    |  0.000012   |
 | 4096          | 128 | 0.000044  | 0.000022   |
-| 8092          | 128 | 0.000037  | 0.000028   |
+| 8192          | 128 | 0.000037  | 0.000028   |
 
-**5.** Iteraciones
+**5.** 
 
 **a.** La forma más rápida, a medida que la cantidad de datos crece, de inicializar los valores del array en 1 es con a[i]. Por que??
 
 **b.** Al ser la variable i un ```int```, no puede representar el número XXXXX es por ello que se lo debe cambiar por el tipo de dato ```unsigned long```.
 
-**6.** El algoritmo overheadIF.c da tres soluciones al siguiente problema: dado un vector V y una posición P , el algoritmo cuenta la cantidad de números del vector V que son menores al elemento en la posición $P$.
+**6.** La tabla que muestra los tiempos para distintos valores de N se muestra a continuación:
 
-Analizar los tiempos obtenidos de las tres soluciones y evaluar las fuentes de overhead en cada caso.
+| N | Sol 1 [seg] | sol2 [seg] | sol3 [seg] |
+| :--------: |  :----: |:----: |:----: |
+| 2048          | 0.000007    |  0.000006   | 0.000006 |
+| 4096          | 0.000024  | 0.000021   |  0.000020 |
+| 1000000       | 0.003804  | 0.003659   | 0.004096 |
+| 1000000000    | 5.166677  | 5.255893   | 5.623722 |
 
-Ejecución: ./overheadIF N
-$N$ : tamaño del vector
-**7.** Compilar y ejecutar el archivo precision.c que calcula el número de fibonacci para los elementos de un vector de tamaño N . El algoritmo compara el resultado de aplicarlo a elementos de tipo de datos entero respecto a aplicarlo a elementos de coma flotante en simple y doble precisión.
+Esto muestra el overhead que produce un if, es por ello que, de ser posible, hay que evitarlo.
 
-Analizar los tiempos obtenidos para cada tipo de datos. ¿Qué conclusiones se pueden obtener del uso de uno u otro tipo de dato?
+**7.** 
 
-Compilar en simple precisión: gcc -O2 -lm -o singlep precision.c Compilar en doble precision: gcc -O2 -DDOUBLE -lm -o doblep precision.c
 
-Ejecución simple precisión: ./singlep $N$ Ejecución doble precisión: ./doblep $N$
-$N$ : tamaño del vector
+
 **8.** El algoritmo nreinas.c resuelve el problemas de las N Reinas. Entender el problema que resuelve el algoritmo y analizar el comportamiento del tiempo de ejecución a medida que crece N. Probar para N, de uno en uno, desde 4 a 20 ¿Qué orden de ejecución tiene?
 
 Ejecución doble precisión: ./nreinas $N$

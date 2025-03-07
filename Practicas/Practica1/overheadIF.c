@@ -14,19 +14,18 @@ unsigned long i;
 	return v;
 }
 
-
 int main(int argc, char *argv[]){
-double timetick;
-time_t t;
-srand((unsigned) time(&t));
-int* v;
-unsigned long N=atol(argv[1]);
-unsigned long numBytes = sizeof(int)*N;
-int posicionSeleccionada = 20;
-unsigned long i;
-unsigned long menores1=0;
-unsigned long menores2=0;
-unsigned long menores3=0;
+	double timetick;
+	time_t t;
+	srand((unsigned) time(&t));
+	int* v;
+	unsigned long N=atol(argv[1]);
+	unsigned long numBytes = sizeof(int)*N;
+	int posicionSeleccionada = 20;
+	unsigned long i;
+	unsigned long menores1=0;
+	unsigned long menores2=0;
+	unsigned long menores3=0;
 
 	v=(int*)malloc(numBytes);
 	v=inicializarVector(v,N);	
