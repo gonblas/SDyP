@@ -90,16 +90,9 @@ Se puede observar que la operación de producto es menos eficiente, esto se debe
 
 **5.** Iteraciones
 
-**a.** Analizar el algoritmo optForArray.c que inicializa un vector con sus valores en 1 de dos formas. ¿Cuál es más rápida?
+**a.** La forma más rápida, a medida que la cantidad de datos crece, de inicializar los valores del array en 1 es con a[i]. Por que??
 
-Ejecución: ./optForArray NR
-$N$ : tamaño de la matriz
-$R$ : cantidad de repeticiones
-**b.** Analizar el algoritmo GaussFor.c que calcula la suma de N números naturales consecutivos y lo compara con la suma de Gauss.
-¿Por qué la suma para $\mathrm{N}=2147483647$ da resultado correcto y para $\mathrm{N}=2147483648$ el resultado es erróneo? ¿Cómo lo solucionaría?
-
-Ejecución: ./GaussFor N
-$N$ : número de elementos a sumar
+**b.** Al ser la variable i un ```int```, no puede representar el número XXXXX es por ello que se lo debe cambiar por el tipo de dato ```unsigned long```.
 
 **6.** El algoritmo overheadIF.c da tres soluciones al siguiente problema: dado un vector V y una posición P , el algoritmo cuenta la cantidad de números del vector V que son menores al elemento en la posición $P$.
 
