@@ -48,29 +48,45 @@ Esto se debe a que, al estar ambas matrices ordenadas de forma tal que los sigui
 | 4096          | 0.0000610352  | 0.0001530647   |
 | 8192         | 0.0001080036  | 0.0001268387  |
 
-Analizar los algoritmos productoVectorialRegistro.c y productoVectorialSinRegistro.c. Ambos programas parten de dos conjuntos de N vectores matemáticos y realizan el producto vectorial uno a uno de acuerdo al orden de cada vector en el conjunto. ¿Cuál de las dos soluciones es más rápida? ¿Por qué?:
-
-Ejecución: ./ productoVectorialRegistro N
-./ productoVectorialSinRegistro N
-N : tamaño de los conjuntos de vectores
 
 **4.** Optimización de instrucciones
 
-**a.** El algoritmo instrucciones $1 . c$ compara el tiempo de ejecución de las operaciones básicas suma $(+)$, resta ( - ), multiplicación $\left(^{*}\right)$ y división (/), aplicadas sobre los elementos que se encuentran en la misma posición de dos vectores x e y. ¿Qué análisis se puede hacer de cada operación? ¿Qué ocurre si los valores de los vectores x e y son potencias de 2 ?
+**a.** Las operaciones de división son las que más tiempo tardan, seguidas de las de producto, y luego suma y resta con tiempos parecidos. Esto se debe a que las operaciones de división y multiplicación requieren más ciclos de reloj que la suma y la resta.
 
-**Ejecución:** ./instrucciones 1 Nr
-$N$ : tamaño de los vectores
-$r$ : número de repeticiones
-b. En función del ejercicio anterior analizar el algoritmo instrucciones2.c que aplica dos operaciones distintas a cada elemento de un vector x .
+Los promedios sin potencias de 2:
 
-**Ejecución:** ./instrucciones 2 Nr
-$N$ : tamaño de los vectores
-$r$ : número de repeticiones
-c. El algoritmo modulo.c compara el tiempo de ejecución de dos versiones para obtener el resto de un cociente $m$ ( m potencia de 2 ) de los elementos enteros de un vector de tamaño N . ¿Qué análisis se puede hacer de las dos versiones?
+| N |  R | Suma [seg] | Resta [seg] | Mult [seg] | Div [seg] |
+| :--------: | :----: | :----: |:----: |:----: |:----: |
+| 2048          | 100000 | 12.0915006846   | 12.0244105347  | 0.0000193948  | 0.0000270898  |
+| 4096          | 100000 | 0.0000182132  |  0.0000218803   | 0.0000381377   | 0.0000346161 |
 
-**Ejecución:** ./modulo Nm
-$N$ : tamaño del vector
-m: potencia de 2
+Con potencias de 2:
+
+| N |  R | Suma [seg] | Resta [seg] | Mult [seg] | Div [seg] |
+| :--------: | :----: | :----: |:----: | :----: |:----: |
+| 2048          | 100000 | 0.0000140630    |  0.0000141677   | 0.0000112806  | 0.0000168453  |
+| 4096          | 100000 | 0.0000296335  |  0.0000309083  | 0.0000223634 | 0.0000259315 |
+
+Puesto que las operaciones de multiplicación y division de números de potencias de 2 puede realizarse como desplazamientos a izquierda y derecha respectivamente, las operaciones toman menos tiempo.
+
+
+**b.** La operación que se realiza es una division por 5 y una multiplicación por 0.2, lo cual es equivalente en términos matemáticos. 
+
+| N |  R |  Div [seg] | Mult [seg] |
+| :--------: | :----: | :----: |:----: |
+| 2048          | 100000 | 0.0001300927     |  0.0001057065   |
+| 4096          | 100000 | 0.0001041755  | 0.0001199758   |
+| 8092          | 100000 | 0.0000958917  | 0.0001435796   |
+
+Se puede observar que la operación de producto es menos eficiente, esto se debe a que el producto por un número flotante es más costoso que la división por un número entero. ?????
+
+**c.** Por como se implementa la operación de módulo, se requiere dividir por el cociente m. Al ser m una potencia de 2, la división es más eficiente por implementarse como desplazamientos.
+
+| N |  r |  Usando % [seg] | Equivalencia [seg] |
+| :--------: | :----: | :----: |:----: |
+| 2048          | 128 | 0.000015    |  0.000012   |
+| 4096          | 128 | 0.000044  | 0.000022   |
+| 8092          | 128 | 0.000037  | 0.000028   |
 
 **5.** Iteraciones
 

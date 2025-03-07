@@ -70,12 +70,12 @@ N : tamaño de los conjuntos de vectores
 **Ejecución:** ./instrucciones 1 Nr
 $N$ : tamaño de los vectores
 $r$ : número de repeticiones
-b. En función del ejercicio anterior analizar el algoritmo instrucciones2.c que aplica dos operaciones distintas a cada elemento de un vector x .
+**b.** En función del ejercicio anterior analizar el algoritmo instrucciones2.c que aplica dos operaciones distintas a cada elemento de un vector x .
 
 **Ejecución:** ./instrucciones 2 Nr
 $N$ : tamaño de los vectores
 $r$ : número de repeticiones
-c. El algoritmo modulo.c compara el tiempo de ejecución de dos versiones para obtener el resto de un cociente $m$ ( m potencia de 2 ) de los elementos enteros de un vector de tamaño N . ¿Qué análisis se puede hacer de las dos versiones?
+**c.** El algoritmo modulo.c compara el tiempo de ejecución de dos versiones para obtener el resto de un cociente $m$ ( m potencia de 2 ) de los elementos enteros de un vector de tamaño N . ¿Qué análisis se puede hacer de las dos versiones?
 
 **Ejecución:** ./modulo Nm
 $N$ : tamaño del vector

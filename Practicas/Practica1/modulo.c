@@ -28,7 +28,7 @@ int main(int argc, char* argv[]){
 		resultModulo[i] = i%m;
 	}
 	printf("Tiempo usando %%: %f \n", dwalltime() - timetick);
-	 
+
 	//Calculo usando la equivalencia
 	timetick = dwalltime();
 	for(i=0;i<N;i++){
