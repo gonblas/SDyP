@@ -105,11 +105,48 @@ Se puede observar que la operación de producto es menos eficiente, esto se debe
 
 Esto muestra el overhead que produce un if, es por ello que, de ser posible, hay que evitarlo.
 
-**7.** 
+**7.** Para el tipo de dato de simple precision:
+
+| N | FLOAT [seg] | INT [seg] | Precision (Error medio) |
+| :--------: |  :----: |:----: |:----: |
+| 1000000          | 0.01    |  0.02    | 17.496799 |
+| 10000000          | 0.10  | 0.16   | 17.461400 |
+| 100000000    | 1.05  | 1.69   | 17.425294 |
+
+Para el tipo de dato de doble precision:
+
+| N | FLOAT [seg] | INT [seg] | Precision (Error medio) |
+| :--------: |  :----: |:----: |:----: |
+| 1000000          | 0.02    |  0.02    | 0.000000 |
+| 10000000          | 0.18  | 0.17   | 0.000000 |
+| 100000000    | 2.22  | 1.73   | 0.000000 |
+
+Si bien se gana precision con el tipo de datos de doble precision, se pierde eficiencia. Por lo tanto, se debe usar doble precision solo cuando es necesario.
 
 
+**8.** La cantidad de soluciones para n entre 4 y 20 se muestra a continuación:
 
-**8.** El algoritmo nreinas.c resuelve el problemas de las N Reinas. Entender el problema que resuelve el algoritmo y analizar el comportamiento del tiempo de ejecución a medida que crece N. Probar para N, de uno en uno, desde 4 a 20 ¿Qué orden de ejecución tiene?
+|  n  |   Q(n)   |
+|----:|---------:|
+|  4  |       2  |
+|  5  |      10  |
+|  6  |       4  |
+|  7  |      40  |
+|  8  |      92  |
+|  9  |     352  |
+| 10  |     724  |
+| 11  |   2,680  |
+| 12  |  14,200  |
+| 13  |  73,712  |
+| 14  | 365,596  |
+| 15  | 2,279,184  |
+| 16  | 14,772,512  |
+| 17  | 95,815,104  |
+| 18  | 666,090,624  |
+| 19  | 4,968,057,848  |
+| 20  | 39,029,188,884  |
 
-Ejecución doble precisión: ./nreinas $N$
-$N$ : número de reinas
+
+Por lo tanto, el orden del algoritmo es de orden exponencial.
+
+[Información acerca del problema de la n-reinas](https://www.cs.buap.mx/~zacarias/FZF/nreinas3.pdf)
