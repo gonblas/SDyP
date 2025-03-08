@@ -3,12 +3,12 @@ DIR = Practicas/Practica1
 UTILS_DIR = utils/
 
 # Source files
-SOURCES = $(UTILS_DIR)utils.c $(DIR)/expMatrices2.c
+SOURCES = $(UTILS_DIR)utils.c $(DIR)/productoVectorialSinRegistro.c
 
 ARGS = 16
 
 # Arguments (you can modify these values for each iteration, allowing for multiple arguments together)
-ARGS_LIST = "32" "64" "128" "256" "512" "1024" "2048"
+ARGS_LIST = "1000000" "10000000" "100000000"
 
 # Executable file
 EXE = results

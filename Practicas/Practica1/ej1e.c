@@ -55,12 +55,10 @@ int main(int argc,char*argv[]){
 		for(j=i;j<N;j++){
 			L[i+j*N]=1;
 		}
-	}
-  for(i=0;i<N;i++){
 		for(j=0;j<i+1;j++){
 			U[i+j*N]=1;
 		}
-	}  
+	}
 
 	timetick = dwalltime();
 	//Realiza la multiplicacion
