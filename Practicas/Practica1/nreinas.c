@@ -135,7 +135,7 @@ void Backtrack1(int y, int left, int down, int right)
             bitmap |= 2;
             bitmap ^= 2;
         }
-       while (bitmap) {
+        while (bitmap) {
             bitmap ^= BOARD[y] = bit = -bitmap & bitmap;
             Backtrack1(y+1, (left | bit)<<1, down | bit, (right | bit)>>1);
         }

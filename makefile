@@ -1,14 +1,14 @@
 # Directories
-DIR = Practicas/Practica1
+DIR = Practicas/Practica2
 UTILS_DIR = utils/
 
 # Source files
-SOURCES = $(UTILS_DIR)utils.c $(DIR)/productoVectorialSinRegistro.c
+SOURCES = $(UTILS_DIR)utils.c $(DIR)/ej6.c
 
-ARGS = 16
+ARGS = 10000 2
 
 # Arguments (you can modify these values for each iteration, allowing for multiple arguments together)
-ARGS_LIST = "1000000" "10000000" "100000000"
+ARGS_LIST =  "10000 2" "10000 4" "100000 2" "100000 4" "1000000 2" "1000000 4" "10000000 2" "10000000 4"
 
 # Executable file
 EXE = results
@@ -17,7 +17,7 @@ EXE = results
 CC = gcc
 
 # Compilation and linking flags
-CFLAGS =
+CFLAGS = -pthread
 LDFLAGS =
 LIBS = 
 

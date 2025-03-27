@@ -6,11 +6,12 @@ Caracterizar los problemas de procesamiento paralelo desde dos puntos de vista: 
 ___
 
 ## ***Practicas***
-* [Práctica 1](Practicas/Practica1 "Practica 1"):Optimización de Algoritmos Secuenciales.
+* [Práctica 1](Practicas/Practica1 "Practica 1"): Optimización de Algoritmos Secuenciales.
+* [Práctica 2](Practicas/Practica2 "Practica 2"): Programación con Pthreads.
 ___
 
-## ***Enlaces Utiles***
+## ***Enlaces Útiles***
 
-[Metodologia - Sistemas Distribuidos y Paralelos](https://ic.info.unlp.edu.ar/wp-content/uploads/2023/05/Sistemas-distribuidos-y-paralelos.pdf)
+[Metodología - Sistemas Distribuidos y Paralelos](https://ic.info.unlp.edu.ar/wp-content/uploads/2023/05/Sistemas-distribuidos-y-paralelos.pdf)
 
 ___
