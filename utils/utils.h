@@ -3,4 +3,6 @@
 
 double dwalltime();
 
+void calculateMetrics(double sequentialTime, double parallelTime, int numProcesses);
+
 #endif
